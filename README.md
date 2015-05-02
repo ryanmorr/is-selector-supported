@@ -1,6 +1,6 @@
 # isSelectorSupported
 
-Determine support for CSS selectors by invoking the `insertRule` method of stylesheets within a try/catch block as unsupported values will throw an error.
+Determine support for CSS selectors by invoking the `insertRule` method of stylesheets within a try/catch block as unsupported values will throw an error. See a working example on [CodePen](http://codepen.io/ryanmorr/pen/qddQPV).
 
 ## Usage
 
