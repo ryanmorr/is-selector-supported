@@ -2,18 +2,22 @@
     'use strict';
 
     var doc = win.document,
-    style = doc.createElement('style');
-    doc.head.appendChild(style);
+    root = doc.documentElement,
+    head = doc.head || root,
+    style = doc.createElement('style'),
+    sheet;
 
-    function isSelectorSupported(selector){
+    head.insertBefore(style, head.firstChild);
+    sheet = style.sheet;
+
+    win.isSelectorSupported = function isSelectorSupported(selector){
         try{
-            style.sheet.insertRule(selector + '{}', 0);
+            sheet.insertRule(selector + '{}', 0);
+            sheet.deleteRule(0);
             return true;
         }catch(e){
             return false;
         }
-    }
-
-    win.isSelectorSupported = isSelectorSupported;
+    };
     
 })(this);
