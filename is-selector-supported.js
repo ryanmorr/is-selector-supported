@@ -1,3 +1,10 @@
+/*
+ * isSelectorSupported
+ * Feature test CSS selector support 
+ * @param {String} selector
+ * @return {Boolean}
+ */
+
 (function(win){
     'use strict';
 
@@ -12,6 +19,7 @@
 
     win.isSelectorSupported = function isSelectorSupported(selector){
         try{
+            // Unsupported selectors will throw an error
             sheet.insertRule(selector + '{}', 0);
             sheet.deleteRule(0);
             return true;
