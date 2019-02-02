@@ -19,6 +19,8 @@ npm install @ryanmorr/is-selector-supported
 To use the method, simply provide a string of the CSS selector:
 
 ```javascript
+import isSelectorSupported from '@ryanmorr/is-selector-supported';
+
 // Check if the :has() selector is supported
 isSelectorSupported(':has(img)');
 
