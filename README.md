@@ -1,30 +1,41 @@
 # isSelectorSupported
 
-Determine support for CSS selectors by invoking the `insertRule` method of stylesheets within a try/catch block as unsupported values will throw an error. See a [working example](http://ryanmorr.github.io/demos/is-selector-supported/) for all CSS selectors currently defined in the specification (L1-L4).
+[![Version Badge][version-image]][project-url]
+[![Build Status][build-image]][build-url]
+[![License][license-image]][license-url]
+
+> Feature test CSS selector support
+
+## Install
+
+Download the [development](http://github.com/ryanmorr/is-selector-supported/raw/master/dist/is-selector-supported.js) or [minified](http://github.com/ryanmorr/is-selector-supported/raw/master/dist/is-selector-supported.min.js) version, or install via NPM:
+
+``` sh
+npm install @ryanmorr/is-selector-supported
+```
 
 ## Usage
 
 To use the method, simply provide a string of the CSS selector:
 
 ```javascript
-// is the :has() selector supported
+// Check if the :has() selector is supported
 isSelectorSupported(':has(img)');
-// is case-insensitive attribute selectors supported
+
+// Check if the case-insensitive attribute selectors are supported
 isSelectorSupported('[foo=bar i]');
-// is the ::backdrop pseudo-element supported
+
+// Check if the ::backdrop pseudo-element selector is supported
 isSelectorSupported('::backdrop');
 ```
-
-## Browser Support
-
-* Chrome *
-* Firefox *
-* Opera *
-* Safari *
-* Internet Explorer 8+
-* Android *
-* iOS *
 
 ## License
 
 This project is dedicated to the public domain as described by the [Unlicense](http://unlicense.org/).
+
+[project-url]: https://github.com/ryanmorr/is-selector-supported
+[version-image]: https://badge.fury.io/gh/ryanmorr%2Fis-selector-supported.svg
+[build-url]: https://travis-ci.org/ryanmorr/is-selector-supported
+[build-image]: https://travis-ci.org/ryanmorr/is-selector-supported.svg
+[license-image]: https://img.shields.io/badge/license-Unlicense-blue.svg
+[license-url]: UNLICENSE

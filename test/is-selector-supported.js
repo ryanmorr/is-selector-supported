@@ -1,10 +1,8 @@
-describe('isSelectorSupported', function(){
-    'use strict';
+import isSelectorSupported from '../src/is-selector-supported';
 
-    var expect = chai.expect;
-
-    it('should return true for supported selectors', function(){
-        var selectors = [
+describe('isSelectorSupported', () => {
+    it('should return true for supported selectors', () => {
+        const selectors = [
             '*',
             'div',
             'div,div',
@@ -28,15 +26,16 @@ describe('isSelectorSupported', function(){
             ':focus',
             ':hover',
             ':lang(en)',
-            ':visited',
+            ':visited'
         ];
-        selectors.forEach(function(selector){
+
+        selectors.forEach((selector) => {
             expect(isSelectorSupported(selector)).to.equal(true);
         });
     });
 
-    it('should return false for unsupported selectors', function(){
-        var selectors = [
+    it('should return false for unsupported selectors', () => {
+        const selectors = [
             '##foo',
             '..foo',
             '[[foo]]',
@@ -45,10 +44,9 @@ describe('isSelectorSupported', function(){
             ':lang()',
             ':nth-child(foo)'
         ];
-        selectors.forEach(function(selector){
-            console.log(selector)
+
+        selectors.forEach((selector) => {
             expect(isSelectorSupported(selector)).to.equal(false);
         });
     });
-
 });
